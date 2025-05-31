@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Investimento Seguro e Lucrativo - André Ricardo Carvalho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 50%, #001f3f 100%);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .action-btn {
+            background: linear-gradient(45deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .action-btn:hover::before {
+            left: 100%;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+        }
+
+        /* White button for orange backgrounds */
+        .action-btn-white {
+            background: white;
+            color: #0056b3;
+            border: 3px solid #0056b3;
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.3);
+        }
+
+        .action-btn-white:hover {
+            background: #0056b3;
+            color: white;
+            box-shadow: 0 12px 35px rgba(0, 86, 179, 0.5);
+        }
+
+        /* Blue button alternative */
+        .action-btn-blue {
+            background: linear-gradient(45deg, #0056b3 0%, #003d82 50%, #001f3f 100%);
+            color: white;
+            border: 3px solid white;
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+        }
+
+        .action-btn-blue:hover {
+            background: white;
+            color: #0056b3;
+            border-color: #0056b3;
+            box-shadow: 0 12px 35px rgba(0, 86, 179, 0.6);
+        }
+
+        .livestream-section {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .livestream-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .livestream-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .presenter-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 20px 0;
+        }
+
+        .section-container {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0056b3;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b35, #ffa726);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .learning-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b35;
+            transition: all 0.3s ease;
+        }
+
+        .learning-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .learning-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .learning-text {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .risk-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .risk-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .risk-left, .risk-right {
+            text-align: center;
+        }
+
+        .risk-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ff6b35;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .news-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: scale(1.05);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .concerns-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .concerns-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .concern-item {
+            background: #f8f9fa;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #0056b3;
+            font-size: 1.1rem;
+        }
+
+        .mentor-section {
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .mentor-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .mentor-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .mentor-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .mentor-info {
+            flex: 2;
+            min-width: 400px;
+        }
+
+        .mentor-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .mentor-point {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            border-left: 4px solid #ffa726;
+        }
+
+        .mentor-point h4 {
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 500px;
+            animation: breathe 2s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0% {
+                transform: translateX(-50%) scale(0.95);
+                box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+                box-shadow: 0 15px 40px rgba(255, 107, 53, 0.8);
+            }
+            100% {
+                transform: translateX(-50%) scale(0.95);
+                box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            }
+        }
+
+        .floating-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .disclaimer-section {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .disclaimer-title {
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+            text-align: center;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #ff6b35;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .modal-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .modal-btn {
+            background: linear-gradient(45deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .risk-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .mentor-content {
+                flex-direction: column;
+            }
+            
+            .livestream-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function openwe() {
+            showModal();
+        }
+
+        function ttaa() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        function showModal() {
+            document.getElementById('modal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hideModal();
+                }
+            });
+        });
+    </script>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="hideModal()">&times;</button>
+            <h2 class="modal-title">Quer receber dicas exclusivas do mercado e análises atualizadas diretamente no WhatsApp?</h2>
+            <p class="modal-description">Fale agora com um especialista e descubra como potencializar seus investimentos no mercado de ações</p>
+            <button onclick="ttaa()" class="modal-btn">✅ Obter Recomendações Grátis Agora</button>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <div class="content-wrapper">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Investir com Segurança e Lucro, Tudo que Você Precisa Saber</h1>
+                        <h2 class="hero-subtitle">A Primeira Aula de Investimento Financeiro que Todo Mundo Deveria Aprender</h2>
+                        <button onclick="openwe()" class="action-btn">Participar Agora</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img/2.png" alt="Investimento Seguro">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Stream Info -->
+        <section class="livestream-section">
+            <div class="content-wrapper">
+                <h2 class="livestream-title">Melhor Horário para Assistir</h2>
+                <p style="font-size: 1.2rem; margin: 20px 0;">Clique no botão acima e reserve sua vaga agora mesmo</p>
+                
+                <div class="livestream-info">
+                    <div class="info-card">
+                        <h3>Evento Online Gratuito</h3>
+                    </div>
+                    <div class="info-card">
+                        <h3>Vagas Limitadas</h3>
+                    </div>
+                    <div class="info-card">
+                        <h3>Reserve Já!</h3>
+                    </div>
+                </div>
+                
+                <div class="presenter-name">Apresentado por André Ricardo Carvalho</div>
+                <button onclick="openwe()" class="action-btn">Garantir Minha Vaga</button>
+            </div>
+        </section>
+
+        <!-- Learning Section -->
+        <section class="section-container">
+            <div class="content-wrapper">
+                <h2 class="section-heading">O Que Você Vai Aprender?</h2>
+                
+                <div class="learning-grid">
+                    <div class="learning-item">
+                        <h3 class="learning-title">Tudo Que Precisa Saber Para Investir com Segurança</h3>
+                        <p class="learning-text">Seja você iniciante ou experiente, todos precisam conhecer os princípios básicos para diversificar riscos no mercado financeiro. Aprenda a usar essas regras para investir com segurança e proteger seu patrimônio.</p>
+                    </div>
+                    
+                    <div class="learning-item">
+                        <h3 class="learning-title">O Que Avaliar Antes de Começar a Investir?</h3>
+                        <p class="learning-text">A maioria das pessoas fica perdida quando pensa em começar sua jornada no mercado financeiro. Isso acontece devido ao medo, insegurança e principalmente pela falta de conhecimento correto.</p>
+                    </div>
+                    
+                    <div class="learning-item">
+                        <h3 class="learning-title">Como se Proteger das Manipulações dos Bancos</h3>
+                        <p class="learning-text">Se você pegar R$ 100 emprestados no rotativo, pela regra dos bancos, em 5 anos esse dinheiro vira uma dívida de quase R$ 14 milhões! Saiba como evitar as armadilhas do mercado financeiro que atrapalham seus resultados nos investimentos.</p>
+                    </div>
+                    
+                    <div class="learning-item">
+                        <h3 class="learning-title">Qual a Melhor Forma de Investir por Conta Própria?</h3>
+                        <p class="learning-text">Pare de ficar refém de bancos, assessores ou consultorias externas. Conheça o que precisa para investir baseado no seu próprio conhecimento sobre o mercado, conforme aquilo que você considera relevante.</p>
+                    </div>
+                    
+                    <div class="learning-item">
+                        <h3 class="learning-title">Quais Princípios os Maiores Investidores do Mundo Seguem?</h3>
+                        <p class="learning-text">Alguns dos maiores investidores do mundo seguem princípios imutáveis para conseguir segurança e lucro. Mesmo que você seja um completo iniciante, pode aprender esses princípios e aplicá-los na sua carteira.</p>
+                    </div>
+                    
+                    <div class="learning-item">
+                        <h3 class="learning-title">Vale a Pena Começar a Investir Depois dos 50 Anos?</h3>
+                        <p class="learning-text">Investir sempre vale a pena. A partir de agora, você pode criar sua própria reserva e ter uma aposentadoria mais tranquila. É a forma mais segura de evitar passar necessidades financeiras na velhice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="content-wrapper">
+                <h2 class="cta-title">Pare de Quebrar a Cabeça! Saiba Tudo que Precisa Para Investir com Segurança e Lucro</h2>
+                <button onclick="openwe()" class="action-btn action-btn-white">Participar Agora</button>
+            </div>
+        </section>
+
+        <!-- Risk Section -->
+        <section class="risk-section">
+            <div class="content-wrapper">
+                <div class="risk-content">
+                    <div class="risk-left">
+                        <h2 class="risk-title">Investir Tem Riscos</h2>
+                        <div class="news-grid">
+                            <div class="news-item">
+                                <img src="img/noticia-01.webp" alt="Notícia 1">
+                            </div>
+                            <div class="news-item">
+                                <img src="img/noticia-02.webp" alt="Notícia 2">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-right">
+                        <h2 class="risk-title">Mas com Conhecimento, Você se Protege</h2>
+                        <div class="news-grid">
+                            <div class="news-item">
+                                <img src="img/noticia-04.webp" alt="Notícia 3">
+                            </div>
+                            <div class="news-item">
+                                <img src="img/noticia-03.webp" alt="Notícia 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concerns Section -->
+        <section class="concerns-section">
+            <div class="content-wrapper">
+                <h2 class="section-heading">Quando o Assunto é Investir, Você Pensa:</h2>
+                
+                <div class="concerns-list">
+                    <div class="concern-item">
+                        <strong>Você se sente inseguro e com medo de perder dinheiro?</strong>
+                    </div>
+                    <div class="concern-item">
+                        <strong>Fica perdido diante de tantas informações e possibilidades?</strong>
+                    </div>
+                    <div class="concern-item">
+                        <strong>Não entende a dinâmica dos investimentos e não tem tempo para acompanhar o mercado?</strong>
+                    </div>
+                    <div class="concern-item">
+                        <strong>Não sabe em quem confiar (bancos, corretoras, assessores)?</strong>
+                    </div>
+                    <div class="concern-item">
+                        <strong>Quer tomar suas próprias decisões de forma consciente?</strong>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 40px;">
+                    <p style="font-size: 1.3rem; margin-bottom: 30px;"><strong>Se você se identifica com pelo menos um desses pontos, este evento foi feito para você</strong></p>
+                    <button onclick="openwe()" class="action-btn">Participar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta-section">
+            <div class="content-wrapper">
+                <h2 class="cta-title">Agora é a Sua Vez de Aprender com André Ricardo Carvalho Como Proteger Seu Patrimônio e Investir com Segurança</h2>
+                <button onclick="openwe()" class="action-btn action-btn-blue">Garantir Minha Vaga</button>
+            </div>
+        </section>
+
+        <!-- Mentor Section -->
+        <section class="mentor-section">
+            <div class="content-wrapper">
+                <h2 class="mentor-title">Conheça Seu Mentor:</h2>
+                
+                <div class="mentor-content">
+                    <div class="mentor-image">
+                        <img src="img/1.png" alt="André Ricardo Carvalho">
+                    </div>
+                    
+                    <div class="mentor-info">
+                        <div class="mentor-point">
+                            <h4>🔹 Experiência e Expertise</h4>
+                            <p>Com mais de 20 anos de experiência em gestão de carteiras, ativos e derivativos, especializado em estratégias macroeconômicas para mercados de renda fixa e câmbio da América Latina.</p>
+                        </div>
+                        
+                        <div class="mentor-point">
+                            <h4>🔹 Gestão de Grandes Ativos</h4>
+                            <p>Entre 2023 e 2024, liderou a gestão de cerca de R$ 13 bilhões em ativos da FAPES BNDES, e de 2018 a 2023, foi diretor de carteiras e sócio da Mongeral Aegon Investimentos.</p>
+                        </div>
+                        
+                        <div class="mentor-point">
+                            <h4>🔹 Histórico Profissional Reconhecido</h4>
+                            <p>Atuou como gerente sênior macro na Occam Brasil (ex-gestor multimercado do Brasil), além de importantes posições como sócio e gestor de diversas gestoras independentes. De 2000 a 2009, integrou a equipe de gestão e negociação do banco UBS Pactual, liderando estratégias de renda fixa, juros e câmbio para América Latina. Desde 2024, atua como gestor de fundos macro na Principal Asset Management Brasil.</p>
+                        </div>
+                        
+                        <div class="mentor-point">
+                            <h4>🔹 Formação Acadêmica de Excelência</h4>
+                            <p>Possui mestrado em Finanças pela IE Business School, graduação em Engenharia Industrial pela UFRJ, MBA em Derivativos pela FGV/EPGE e certificação CFA, demonstrando sólida base acadêmica e credibilidade no mercado financeiro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer-section">
+            <div class="content-wrapper">
+                <h3 class="disclaimer-title">Declaração e Divulgação Importante:</h3>
+                <p>Todo o conteúdo desta plataforma destina-se exclusivamente a fins educacionais e de aprendizado, não sendo direcionado a resultados específicos de investimento. As opiniões de mercado, experiências de investimento e informações relacionadas compartilhadas pelos membros do grupo são apenas para referência e discussão, não constituindo qualquer forma de conselho de investimento ou garantia.</p>
+                
+                <p>Este grupo de intercâmbio é de natureza puramente compartilhada e não constitui qualquer forma de consultoria financeira ou de investimento. O desempenho passado não representa resultados futuros. Os retornos dos investimentos podem ter grande volatilidade, e o desempenho histórico não pode garantir ganhos futuros.</p>
+                
+                <p>Os investimentos apresentam riscos inerentes e podem resultar em perdas financeiras. As informações apresentadas nesta plataforma destinam-se apenas a fins educacionais gerais e não substituem o aconselhamento profissional baseado na situação financeira individual, tolerância ao risco e objetivos de investimento de cada pessoa.</p>
+                
+                <p>As informações fornecidas neste site não constituem uma oferta de compra ou venda de produtos financeiros, e o valor dos produtos financeiros ou retornos de investimentos podem subir ou descer. Recomendamos que os investidores conduzam suas próprias pesquisas antes de tomar decisões de investimento e consultem consultores financeiros qualificados quando necessário.</p>
+                
+                <p>Este material não foi preparado de acordo com os requisitos legais destinados a promover a independência da pesquisa de investimentos e não está sujeito a qualquer proibição de negociação antes da disseminação da pesquisa de investimentos. Qualquer decisão de investimento deve ser baseada nas informações contidas nos documentos oficiais relevantes e não deve ser baseada apenas neste material.</p>
+            </div>
+        </section>
+
+        <!-- Floating Action Button -->
+        <div class="floating-action">
+            <button onclick="openwe()" class="floating-btn">
+            Comece a aprender
+            </button>
+        </div>
+    </div>
+</body>
+</html>
